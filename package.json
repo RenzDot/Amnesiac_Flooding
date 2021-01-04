@@ -1,0 +1,23 @@
+{
+  "name": "amnesiac_flooding",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-tools": "^9.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenzDot/Amnesiac_Flooding.git"
+  },
+  "author": "RenzDot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RenzDot/Amnesiac_Flooding/issues"
+  },
+  "homepage": "https://github.com/RenzDot/Amnesiac_Flooding#readme",
+  "description": ""
+}
