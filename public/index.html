@@ -38,18 +38,49 @@
       }
     </style>
   </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Amnesiac Flooding Test</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Create network</a>
-    </br>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Load network</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
+  <body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="scripts/springy.js"></script>
+    <script src="scripts/springyui.js"></script>
     <script>
+      var graphJSON = {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "edges": [
+        ["A", "B"],
+        ["A", "C"],
+        ["A", "E"],
+        ["B", "G"],
+        ["B", "D"],
+        ["C", "F"],
+        ["C", "D"],
+        ["D", "H"],
+        ["E", "F"],
+        ["E", "G"],
+        ["F", "H"],
+        ["G", "H"]
+      ]
+    };
+
+    jQuery(function () {
+      var graph = new Springy.Graph();
+      graph.loadJSON(graphJSON);
+
+      var springy = jQuery('#springy').springy({
+        graph: graph
+      });
+    });
+
       document.addEventListener('DOMContentLoaded', function() {
         const loadEl = document.querySelector('#load');
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -65,7 +96,7 @@
         // firebase.analytics().logEvent('tutorial_completed');
         // firebase.performance(); // call to activate
         //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
         try {
           let app = firebase.app();
@@ -87,5 +118,17 @@
         }
       });
     </script>
+
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Amnesiac Flooding Test</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Create network</a>
+    </br>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Load network</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <canvas id="springy" width="640" height="480" />
   </body>
 </html>
