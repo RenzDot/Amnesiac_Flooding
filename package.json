@@ -42,10 +42,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RenzDot/Amnesiac_Flooding.git"
+ 1"
+  "url": "git+https://github.com/RenzDot/Amnesiac_Flooding.git"
   },
   "author": "RenzDot",
   "license": "MIT",
